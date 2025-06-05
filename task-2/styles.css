@@ -1,0 +1,28 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    transform: translateY(-150%);
+    visibility: hidden;
+    /* The transition is removed from the base state to prevent the resize glitch */
+  }
+  .menu.open {
+    transform: translateY(0);
+    /* The transition is applied only to the open state to animate the slide-down */
+    transition: transform 0.3s ease;
+    visibility: visible;
+  }
+}
